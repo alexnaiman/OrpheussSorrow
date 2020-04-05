@@ -1,0 +1,85 @@
+% !TeX root = ./main.tex
+
+
+\documentclass[12pt,twoside]{report}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{changepage}
+\graphicspath{ {./images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[document]{ragged2e}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage{fancyhdr}
+\usepackage[nottoc]{tocbibind}
+\usepackage{url}
+
+
+\usepackage[nottoc]{tocbibind}
+
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{Music and Feelings:  A deep learning approach to emotional composition}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Chapter \thechapter}
+\fancyfoot[CO,RE]{Naiman Alexandru Nicolae}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{Thesis Title}
+\author{Author Name}
+\date{Day Month Year}
+
+\begin{document}
+\input{title_page}
+
+\input{abstract}
+
+% \chapter*{Dedication}
+% To mum and dad
+
+% \chapter*{Declaration}
+% I declare that..
+
+% \chapter*{Acknowledgements}
+% I want to thank...
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\chapter{Introduction}
+\input{chapters/introduction}
+\begin{justify}
+
+    \chapter{Machine Learning and Autoencoders}
+    \input{chapters/chapter2}
+\end{justify}
+
+% \chapter{Chapter Three Title}
+% \input{chapters/chapter03}
+
+% \chapter{Chapter Four Title}
+% \input{chapters/chapter04}
+
+% \chapter{Conclusion}
+% \input{chapters/conclusion}
+
+% \appendix
+% \chapter{Appendix Title}
+% \input{chapters/appendix}
+
+% BIBLIOGRAPHY
+\bibliographystyle{acm}
+\bibliography{references}
+
+
+\end{document}
+
