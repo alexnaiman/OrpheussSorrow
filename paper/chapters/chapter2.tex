@@ -53,35 +53,96 @@ Having said that, there are classification and regression algorithms.
 % @HERE Classification
 Classification algorithms solve problems in which the input data has
 been labelled in different classes or categories,
-meaning that the goal  is to predict discrete values
-such as $\{0, 1\}$, $\{2, 4, 6, 8\dots\}$, $\{cat, dog\}$, $\{spam, normal\}$, etc.
+meaning that the goal is to predict discrete values
+such as $\{0, 1\}$, $\{2, 4, 6, 8\dots\}$, $\{cat, dog\}$, $\{spam, normal\}$, etc \cite{typesMLMedium}.
 
 % @HERE Regression
 Regression algorithms, on the other hand, solve problems in which the output variable
 is a real value, meaning that the goal is to predict continuous values based on the
-input data, such as predicting house prices based on their size and location.
+input data, such as predicting house prices based on their size and location \cite{typesMLMedium}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1\textwidth]{regression_classification}
+    \includegraphics[width=0.8\textwidth]{regression_classification}
     \caption{\emph{Classification(left) and Regression(right) visualization  \cite{bigDataR}}}
     \label{fig:regression_classification}
 \end{figure}
 
 
 \subsection{Unsupervised Learning}
-WIP
+In unsupervised learning, the job of the algorithms is to observe patterns in
+the structure of the given data even though no explicit feedback is supplied \cite{amai}.
+There is no human factor implied in the learning process,
+hence the name of unsupervised learning.
+As shown in Figure\emph{~\ref{fig:unsupervised}}, they should be able to identify the underlying
+structure in the given data, to better understand it \cite{bigDataR}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{unsupervised_learning}
+    \caption{\emph{Unsupervised algorithm grouping data by their observed features \cite{typesML}}}
+    \label{fig:unsupervised}
+\end{figure}
+
+Just as supervised learning, unsupervised algorithms can also be grouped
+based on the type of problem they intend to solve. Provided that,
+there are clustering and low-dimensional embedding algorithms \cite{amai}.
+
+%  @HERE clustering
+Clustering algorithms try to solve problems by grouping the input data
+into different segments based on similarities learned,
+such as grouping customers by purchasing behaviour \cite{brownlee2016master}.
 
 
-
-
-
+% @HERE dimensionality reduction
+Low-dimensional embedding also called dimensionality reduction,
+is a technique in which complex data, that is difficult to describe
+(data that needs more than two or three dimensions to represent)
+is reduced to a lower number of dimensions,
+wherein the machine learning algorithms can help
+since they can learn the internal structure inside our data, furthermore,
+transcribing it to an easier way of interpreting it \cite{amai}.
 
 
 \subsection{Semi-supervised Learning}
-WIP
+Supervised learning algorithms lie between the aforementioned categories.
+They intend to solve problems where you have a large amount of data but only some labelled.
+A lot of machine learning problems are using this technique for the reason that
+labelled data can be expensive or time-consuming to obtain,
+in contrast to unlabelled data that is much easier to acquire \cite{brownlee2016master}.
+
+As shown in Figure Figure\emph{~\ref{fig:semi_supervised_learning}}, one can use an initial classifier on the labelled data,
+classify based on the features learned previously, the unlabelled data,
+retrain the classifier with the whole dataset,
+then use it to predict new outputs given new input data, ideally obtaining a better model \cite{lotte2015}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{semi_supervised_learning}
+    \caption{\emph{Semi-supervised approach on data classification \cite{lotte2015}}}
+    \label{fig:semi_supervised_learning}
+\end{figure}
+
 \subsection{Reinforcement Learning}
-WIP
+Reinforcement learning algorithms are based on a system of type reward-punishment,
+where the job of the algorithm is to iteratively interact with its environment,
+making actions in such a manner that will maximize the rewards or minimize the punishments.
+To put it another way, in reinforcement learning,
+the software learns from its past experiences allowing it to develop an optimal
+behaviour within a specific setting, where it aims to increase its performance.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{reinforcement_learning}
+    \caption{\emph{Scheme of how reinforcement algorithms work \cite{typesMLMedium}}}
+    \label{fig:reinforcement_learning}
+\end{figure}
+
+Figure\emph{~\ref{fig:reinforcement_learning}} is a visual representation of how reinforcement learning works. The algorithm
+(called the "agent" in the picture), takes action in the environment,
+which will possibly trigger a reward. After that, the state is updated,
+and when deciding its next action, it will take into account its last state and the
+result of the previous action.
 
 \section{ANN's and how they work}
 One of the main types of machine learning algorithms that are vastly used is
@@ -92,7 +153,10 @@ edge represents the synapses of the neural network.
 The weight of each edge determines how powerful the synapse is.
 The neurons are distributed in groups named layers.
 Neurons can form synapses only with neurons from other layers.
-\vspace{0.5cm}
+
+\subsection{Artificial neurons, activation function and backpropagation}
+
+
 
 As you can see in \emph{\ref{fig:ann_structure}} there are three types of layers in an artificial neural network:
 \begin{itemize}[]
