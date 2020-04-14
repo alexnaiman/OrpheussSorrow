@@ -35,9 +35,9 @@ the job of the algorithms is to approximate a function that maps from input to o
 It is called supervised learning because human experts act as the teacher,
 where they serve the computer with training data containing the input and
 also provide the correct output, from which the computer should be able to observe patterns.
-As seen depicted in the Figure\emph{~\ref{fig:supervised}}, the algorithm should be able
-to predict the output given new inputs,
-based on  the function that it approximates \cite{typesMLMedium}.
+As seen depicted in Figure\emph{~\ref{fig:supervised}},
+the algorithm should be able to predict the output when given new inputs,
+based on the function that it approximates \cite{typesMLMedium}.
 
 \begin{figure}[h]
     \centering
@@ -84,7 +84,7 @@ structure in the given data, to better understand it \cite{bigDataR}.
     \label{fig:unsupervised}
 \end{figure}
 
-Just as supervised learning, unsupervised algorithms can also be grouped
+The same as supervised learning, unsupervised algorithms can also be grouped
 based on the type of problem they intend to solve. Provided that,
 there are clustering and low-dimensional embedding algorithms \cite{amai}.
 
@@ -95,7 +95,7 @@ such as grouping customers by purchasing behaviour \cite{brownlee2016master}.
 
 
 % @HERE dimensionality reduction
-Low-dimensional embedding also called dimensionality reduction,
+Low-dimensional embedding, also called dimensionality reduction,
 is a technique in which complex data, that is difficult to describe
 (data that needs more than two or three dimensions to represent)
 is reduced to a lower number of dimensions,
@@ -105,7 +105,7 @@ transcribing it to an easier way of interpreting it \cite{amai}.
 
 
 \subsection{Semi-supervised Learning}
-Supervised learning algorithms lie between the aforementioned categories.
+Semi-supervised learning algorithms lie between the aforementioned categories.
 They intend to solve problems where you have a large amount of data but only some labelled.
 A lot of machine learning problems are using this technique for the reason that
 labelled data can be expensive or time-consuming to obtain,
@@ -144,7 +144,7 @@ which will possibly trigger a reward. After that, the state is updated,
 and when deciding its next action, it will take into account its last state and the
 result of the previous action.
 
-\section{ANN's and how they work}
+\section{ANNs and how they work}
 One of the main types of machine learning algorithms that are vastly used is
 artificial neural networks or ANNs.
 They are structured as weighted graphs, modelled after the
@@ -152,12 +152,80 @@ human brain where each node represents a neuron and each
 edge represents the synapses of the neural network.
 The weight of each edge determines how powerful the synapse is.
 The neurons are distributed in groups named layers.
-Neurons can form synapses only with neurons from other layers.
+Neurons can form synapses only with neurons from other layers \cite{understandingANN}.
 
-\subsection{Artificial neurons, activation function and backpropagation}
+\subsection{Artificial neurons and activation function}
+
+The smallest unit of an artificial neural network is the \textbf{artificial neuron},
+namely the nodes of the graph. It is the place where the computation happens:
+a node merges the input data by doing their weighted sum, to dampen or amplify the input.
+Further, the result will be given to a so-called \textbf{activation function} whose purpose is to
+determine whether or not the neural signal will be passed on to the next neurons or not \cite{pathMind}.
+A more detailed explanation of the subject can be seen in Figure\emph{~\ref{fig:artificial_neuron}}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{artificial_neuron}
+    \caption{\emph{Anatomy of an artificial neural network \cite{pathMind}}}
+    \label{fig:artificial_neuron}
+\end{figure}
+
+The aforesaid \textbf{activation function} is a mathematical expression that helps
+the ANN to add non-linearity to itself. With more and bigger datasets,
+the patterns that need to be identified become more complex.
+With the help of these types of function, the input is much easier to analyze and interpret.
+
+\begin{itemize}
+    \item{
+          \textbf{zero-centered}: output should be symmetrical
+          at zero so that it does not move to a particular direction;
+          }
+    \item{
+          \textbf{computationally inexpensive}: the function is called for every layer
+          for each input data, meaning that it could be invoked thousands of times.
+          Therefore, they should not be computationally expensive;
+          }
+    \item{
+          \textbf{differentiable}: at the core of almost every machine algorithm lies
+          an optimization algorithm. One of the most popular
+          approaches is the gradient descent algorithm in which one of the most essential
+          features is that the function used needs to be differentiable;
+          this idea will be discussed in detail in a subsequent paragraph;
+          }
+\end{itemize}
 
 
 
+\subsection{Backpropagation and gradient descent}
+
+\textbf{Backpropagation} describes how machine algorithms learn.
+As show in Figure\emph{\ref{fig:backpropagation}},
+after the data traverses the neural network in a forward manner,
+propagating the signals through the neurons,
+the algorithm will go in reverse adjusting each weight for each node and its links \cite{Goodfellow-et-al-2016}.
+This technique is called backpropagation of errors, or simply,
+backpropagation and is the learning engine of the most ANN's.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{backpropagation}
+    \caption{\emph{Feedforward Backpropagation Neural Network architecture. \cite{backpropagation}}}
+    \label{fig:backpropagation}
+\end{figure}
+
+The \textbf{gradient descent}, as mentioned before,
+is an optimization algorithm best-used to find the (local) minimum value for a function \cite{brownlee2016master}.
+Hence, it can be used to reduce the errors in our algorithm,
+since the training of a neural network is just the process of finding the set of weights and other
+parameters in such a fashion that the errors(differences) between our expected and actual results are minimum.
+Hence, the gradient descent is used to compute the errors of our algorithm, that will be later backpropagated
+through the ANN.
+
+
+\subsection{Layers of ANNs}
+Multiple artificial neurons are grouped in \textbf{layers};
+the purpose of each one is to apply a non-linear
+transformation of the input from one vector space to another \cite{appliedDeepLearning}.
 As you can see in \emph{\ref{fig:ann_structure}} there are three types of layers in an artificial neural network:
 \begin{itemize}[]
     \item{ Input layer
@@ -195,16 +263,14 @@ Deep learning is a subfield of machine learning that contains a collection of AN
 their capability on learning unsupervised from data that is unstructured or unlabeled,
 also known as deep neural learning or deep neural network.
 
-\vspace{0.5cm}
 A second classification we can make on ANNs is based on the relationships between their nodes.
 Then, neural networks can be recurrent or feedforward;
 the first one does not have any loops in its graph and can be organized in layers.
 A deep neural network is a feedforward ANN with many hidden layers.
-\vspace{5cm}
 
-A visual representation of the aforementioned is the Figure\emph{~\ref{fig:deep_vs_normal}} wherein we could see
-the differences between a simple feedforward ANN with one hidden layer(left) and a deep neural network with three
-hidden layers
+A visual representation of the aforementioned is the Figure\emph{~\ref{fig:deep_vs_normal}}
+wherein we could see the differences between a simple feedforward ANN with one
+hidden layer(left) and a deep neural network with three hidden layers
 \begin{figure}[h]
     \centering
     \includegraphics[width=1\textwidth]{deep_vs_normal_ann}
@@ -212,3 +278,7 @@ hidden layers
     \label{fig:deep_vs_normal}
 \end{figure}
 
+Deep learning is an area in machine learning that achieves state-of-the-art
+results by learning to represent the world "as a nested hierarchy of concepts,
+with each concept defined in relation to simpler concepts,
+and more abstract representations computed in terms of less abstract ones" \cite{Goodfellow-et-al-2016}
