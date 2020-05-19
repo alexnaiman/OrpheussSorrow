@@ -35,7 +35,7 @@ the job of the algorithms is to approximate a function that maps from input to o
 It is called supervised learning because human experts act as the teacher,
 where they serve the computer with training data containing the input and
 also provide the correct output, from which the computer should be able to observe patterns.
-As seen depicted in Figure\emph{~\ref{fig:supervised}},
+As depicted in Figure\emph{~\ref{fig:supervised}},
 the algorithm should be able to predict the output when given new inputs,
 based on the function that it approximates \cite{typesMLMedium}.
 
@@ -111,7 +111,7 @@ A lot of machine learning problems are using this technique for the reason that
 labelled data can be expensive or time-consuming to obtain,
 in contrast to unlabelled data that is much easier to acquire \cite{brownlee2016master}.
 
-As shown in Figure Figure\emph{~\ref{fig:semi_supervised_learning}}, one can use an initial classifier on the labelled data,
+As shown in Figure\emph{~\ref{fig:semi_supervised_learning}}, one can use an initial classifier on the labelled data,
 classify based on the features learned previously, the unlabelled data,
 retrain the classifier with the whole dataset,
 then use it to predict new outputs given new input data, ideally obtaining a better model \cite{lotte2015}
@@ -199,7 +199,7 @@ With the help of these types of function, the input is much easier to analyze an
 \subsection{Backpropagation and gradient descent}
 
 \textbf{Backpropagation} describes how machine algorithms learn.
-As show in Figure\emph{\ref{fig:backpropagation}},
+As shown in Figure\emph{\ref{fig:backpropagation}},
 after the data traverses the neural network in a forward manner,
 propagating the signals through the neurons,
 the algorithm will go in reverse adjusting each weight for each node and its links \cite{Goodfellow-et-al-2016}.
@@ -270,19 +270,59 @@ A deep neural network is a feedforward ANN with many hidden layers.
 
 A visual representation of the aforementioned is the Figure\emph{~\ref{fig:deep_vs_normal}}
 wherein we could see the differences between a simple feedforward ANN with one
-hidden layer(left) and a deep neural network with three hidden layers
+hidden layer(left) and a deep neural network with three hidden layers.
 \begin{figure}[h]
     \centering
     \includegraphics[width=1\textwidth]{deep_vs_normal_ann}
-    \caption{\emph{Difference between a Non-deep ANN(left) and a deep ANN(right) \cite{deepLearningBook}}}
+    \caption{\emph{Difference between a Non-deep ANN(left) and a deep ANN(right) \cite{deepLearningBook}}}.
     \label{fig:deep_vs_normal}
 \end{figure}
 
 Deep learning is an area in machine learning that achieves state-of-the-art
 results by learning to represent the world "as a nested hierarchy of concepts,
 with each concept defined in relation to simpler concepts,
-and more abstract representations computed in terms of less abstract ones" \cite{Goodfellow-et-al-2016}
+and more abstract representations computed in terms of less abstract ones".\cite{Goodfellow-et-al-2016}
+
+A visual representation of the aforementioned statement can be seen in Figure 2.3.
+
 
 
 \section{Autoencoders and how they learn}
-WIP
+
+Autoencoders are neural networks usually used for dimensionality reduction.
+They learn in an unsupervised manner,
+their purpose being to obtain the internal representation of
+the data by compressing and then reconstructing the original input,
+making a copy of it.\cite{deepLearningBook}
+
+This type of neural network is composed of two parts:
+
+\begin{itemize}
+    \item \textbf{encoder}
+    \item \textbf{decoder}
+\end{itemize}
+
+The first one may be viewed as a network that aims to compress
+our data into a  lower dimension code, named encoding.
+It could be represented as a function \(\boldsymbol{h}=f(x)\).\cite{deepLearningBook}
+
+The second one intends to reconstruct the input based on that encoding,
+removing thus all the possible noise.
+It could be represented as a function \(\boldsymbol{r}=g(h)\).\cite{deepLearningBook}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{autoencoder}
+    \caption{\emph{Structure of an autoencoder \cite{deepLearningBook}}}.
+    \label{fig:autoencoder}
+\end{figure}
+
+Therefore, as shown in Figure \ref{fig:autoencoder},
+the entire autoencoder can be seen as the following function: \(g(f(x))=x\).
+In other words, an autoencoder tries to mimic the identity function,
+but, due to the compression, is unable to do so.
+However, thanks to that same compression,
+it learns how to successfully identify
+the most important features of our data's internal structure,
+represented by the encoding.
+
