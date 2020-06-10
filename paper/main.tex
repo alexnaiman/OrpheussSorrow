@@ -16,11 +16,20 @@
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
 \usepackage{fancyhdr}
 \usepackage[nottoc]{tocbibind}
-\usepackage{url}
+\usepackage{xurl}
+\usepackage{wrapfig}
+\usepackage{float}
 
-
+\usepackage{listings}
 \usepackage[nottoc]{tocbibind}
+\usepackage{listings}
+\usepackage{minted}
+\usemintedstyle{vs}
 
+\lstset{
+    % float=H
+    breaklines=true,
+}
 
 \pagestyle{fancy}
 \fancyhead{}
@@ -34,6 +43,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 \usepackage[parfill]{parskip}
+\newcommand{\code}[1]{\texttt{#1}}
+
 
 \title{Thesis Title}
 \author{Author Name}
@@ -57,8 +68,10 @@
 
 \listoffigures
 
-\listoftables
+% \listoftables
 
+\renewcommand\listoflistingscaption{List of source codes}
+\listoflistings
 
 % \begin{justify}
 
@@ -69,20 +82,17 @@
 \input{chapters/chapter2}
 % \end{justify}
 
-\chapter{Music and MachineLearning}
+\chapter{Music and Machine Learning}
 \input{chapters/chapter3}
 
-\chapter{Emotion MIDI Dataset}
+\chapter{Proposed approach}
 \input{chapters/chapter4}
 
-\chapter{Proposed approach}
+\chapter{Application}
 \input{chapters/chapter5}
 
-\chapter{Application}
-\input{chapters/chapter6}
-
 \chapter{Conclusion and future work}
-\input{chapters/chapter7}
+\input{chapters/chapter6}
 
 % \chapter{Conclusion}
 % \input{chapters/conclusion}
@@ -98,3 +108,23 @@
 
 \end{document}
 
+% TODO:
+% GET THE MODEL FROM GOOGLE COLABS
+% WRITE ABOUT GOOGLE COLABS
+% CHECK IF IT IS THE SAME WITH THE MODEL FROM LOCAL
+% CHECK ALL FILE PATHS
+
+% AWESOME SONG 
+% curl 'http://localhost:5000/generate_song' \
+%   -H 'Connection: keep-alive' \
+%   -H 'Accept: application/json' \
+%   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36' \
+%   -H 'Content-Type: application/json' \
+%   -H 'Origin: http://localhost:3000' \
+%   -H 'Sec-Fetch-Site: same-site' \
+%   -H 'Sec-Fetch-Mode: cors' \
+%   -H 'Sec-Fetch-Dest: empty' \
+%   -H 'Referer: http://localhost:3000/' \
+%   -H 'Accept-Language: en-US,en;q=0.9,ro;q=0.8,co;q=0.7' \
+%   --data-binary '{"features":[3,52,93,54,52,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],"threshold":8,"valence":85,"arousal":13,"multiplier":3}' \
+%   --compressed

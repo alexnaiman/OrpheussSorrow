@@ -10,8 +10,8 @@ import {
 
 /**
  * Two-axis slider usd for our emtional values
- * @param {x} x -> x-axes value
- * @param {y} y -> y-axes value
+ * @param {number} x -> x-axes value
+ * @param {number} y -> y-axes value
  * @param {({x: number, y: number}) => value} y -> `onChange` function for the `react-input-slider`
  * @param {() => void} onDragEnd -> callback used when drag ends -> used for calls
  */

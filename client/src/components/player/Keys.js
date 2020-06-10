@@ -4,7 +4,7 @@ import { NOTE_RANGE, NOTE_HEIGHT, SPACING } from "@/utils/constants";
 import styled from "styled-components";
 
 /**
- * Dumb component that renders a key
+ * Presentational component that renders a key
  */
 const Key = styled.div.attrs(({ isSharp }) => ({
   style: {
@@ -25,11 +25,13 @@ const Key = styled.div.attrs(({ isSharp }) => ({
 `;
 
 /**
- * Dumb component that renders all keys and positions them
+ * Presentational component that renders all keys and positions them
+ * @param {number} scrollLeft -> value of the scrollLeft position of the Container
+ *                            -> used for dynamically changing the position of the keys onScroll
  */
-const Keys = ({ scrollLeft, isScrollingBack }) => {
+const Keys = ({ scrollLeft }) => {
   return (
-    <KeysWrapper scrollLeft={scrollLeft} isScrollingBack={isScrollingBack}>
+    <KeysWrapper scrollLeft={scrollLeft}>
       {NOTE_RANGE.map(item => (
         <Key key={item} isSharp={item.indexOf("#") > -1} />
       ))}

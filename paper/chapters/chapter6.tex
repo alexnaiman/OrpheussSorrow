@@ -1,1 +1,39 @@
-WIP
+
+This paper tries to solve a problem that the aspiring musician has always been fighting,
+the music equivalent of "writer's block".
+It provides a tool whose primary purpose is to enhance its creational
+workflow by taking one of the most challenging tasks off his hands.
+Orpheus's Sorrow application offers an easy way of composing songs based on a given feeling,
+without the need for mastering music theory.
+
+This trial represents only a proof of concept;
+this paper's work is merely scratching the surface of what musical composition implies,
+due to solely the complexity of the process,
+but thanks to the results,
+it has proved itself worthy of investing more time.
+
+The model is capable of composing new songs with a well-defined structure,
+based on the input emotion data and features.
+Unfortunately, due to the small dataset the network was trained on,
+the actual emotions of the generated songs are not that clear.
+Despite that,
+general characteristics of a song composed based on the given emotions were
+found on the newly created compositions,
+meaning that the model was able to capture some information about the emotion data.
+
+For future developments,
+one of the main improvements for this approach will be to enhance the dataset
+with more songs with normal-distributed emotion data;
+in this way, the prediction will be more accurate.
+Hence the songs will reflect the emotions better.
+
+Another future improvement can be the ability to compose starting
+from an already written song,
+being able to enhance or continue that piece of music.
+This feature can be developed by using the encoder part of the model to predict the
+encoding of the given song, attach the emotion data or tweak the values of the encoding,
+and then plug the result in the decoder generating a new song.
+
+The client app can also be improved with other features regarding the MIDI player.
+One of those could be the ability to edit the created song,
+change the playback instrument, and export the new piece as a MIDI file.

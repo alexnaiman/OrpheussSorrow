@@ -7,7 +7,7 @@ import InputContainer from "./input/InputContainer";
 import { useStore } from "@/mobx";
 import { useKeyPress } from "@/utils/hooks";
 
-const INSTRUMENT = 834; // pre-defined instrument
+const INSTRUMENT = 837; // pre-defined instrument
 
 /**
  * Main smart component of our application in which we inject our store
@@ -38,10 +38,12 @@ const MidiContainer = () => {
 
     // adding notes to corresponding beats
     songRawBeats.forEach(([beat, pitch]) => {
-      songBeats[(beat / 8).toFixed(0)][1][0][1] = [
-        ...songBeats[(beat / 8).toFixed(0)][1][0][1],
-        pitch
-      ];
+      try {
+        songBeats[(beat / 8).toFixed(0)][1][0][1] = [
+          ...songBeats[(beat / 8).toFixed(0)][1][0][1],
+          pitch
+        ];
+      } catch {}
     });
 
     return songBeats;

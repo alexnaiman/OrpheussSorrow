@@ -42,8 +42,9 @@ const pianoRollsStore = types
         {
           features: getSnapshot(self.features).map(item => item.value),
           threshold: self.threshold,
-          valence: self.valence * self.multiplier,
-          arousal: self.arousal * self.multiplier
+          valence: self.valence,
+          arousal: self.arousal,
+          multiplier: self.multiplier
         },
         self.onGetSongSuccess,
         self.onGetSongError
