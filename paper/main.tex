@@ -13,7 +13,6 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{ragged2e}
-\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
 \usepackage{fancyhdr}
 \usepackage[nottoc]{tocbibind}
 \usepackage{xurl}
@@ -22,8 +21,7 @@
 
 \usepackage{listings}
 \usepackage[nottoc]{tocbibind}
-\usepackage{listings}
-\usepackage{minted}
+\usepackage[chapter]{minted}
 \usemintedstyle{vs}
 
 \lstset{
@@ -31,9 +29,14 @@
     breaklines=true,
 }
 
+
+\usepackage{chngcntr}
+\AtBeginDocument{\counterwithin{lstlisting}{section}}
+
+
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[RO,LE]{Music and Feelings:  A deep learning approach to emotional composition}
+\fancyhead[RO,LE]{Music and Feelings:  A Deep Learning Approach to Emotional Composition}
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage}
 \fancyfoot[LO,CE]{Chapter \thechapter}
@@ -45,6 +48,10 @@
 \usepackage[parfill]{parskip}
 \newcommand{\code}[1]{\texttt{#1}}
 
+% \renewcommand{\baselinestretch}{1.5}
+\usepackage{setspace}
+\setstretch{1.25}
+
 
 \title{Thesis Title}
 \author{Author Name}
@@ -52,6 +59,7 @@
 
 \begin{document}
 \input{title_page}
+\input{romanian_title_page}
 
 \input{abstract}
 
@@ -68,10 +76,13 @@
 
 \listoffigures
 
+\renewcommand\listoflistingscaption{List of Source Codes}
+\listoflistings
+\addcontentsline{toc}{chapter}{List of Source Codes}
+
 % \listoftables
 
-\renewcommand\listoflistingscaption{List of source codes}
-\listoflistings
+
 
 % \begin{justify}
 
@@ -127,4 +138,46 @@
 %   -H 'Referer: http://localhost:3000/' \
 %   -H 'Accept-Language: en-US,en;q=0.9,ro;q=0.8,co;q=0.7' \
 %   --data-binary '{"features":[3,52,93,54,52,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],"threshold":8,"valence":85,"arousal":13,"multiplier":3}' \
+%   --compressed
+
+% curl 'http://localhost:5000/generate_song' \
+%   -H 'Connection: keep-alive' \
+%   -H 'Accept: application/json' \
+%   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36' \
+%   -H 'Content-Type: application/json' \
+%   -H 'Origin: http://localhost:3000' \
+%   -H 'Sec-Fetch-Site: same-site' \
+%   -H 'Sec-Fetch-Mode: cors' \
+%   -H 'Sec-Fetch-Dest: empty' \
+%   -H 'Referer: http://localhost:3000/' \
+%   -H 'Accept-Language: en-US,en;q=0.9,ro;q=0.8,co;q=0.7' \
+%   --data-binary '{"features":[50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],"threshold":8,"valence":86,"arousal":75,"multiplier":3}' \
+%   --compressed
+
+% curl 'http://localhost:5000/generate_song' \
+%   -H 'Connection: keep-alive' \
+%   -H 'Accept: application/json' \
+%   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36' \
+%   -H 'Content-Type: application/json' \
+%   -H 'Origin: http://localhost:3000' \
+%   -H 'Sec-Fetch-Site: same-site' \
+%   -H 'Sec-Fetch-Mode: cors' \
+%   -H 'Sec-Fetch-Dest: empty' \
+%   -H 'Referer: http://localhost:3000/' \
+%   -H 'Accept-Language: en-US,en;q=0.9,ro;q=0.8,co;q=0.7' \
+%   --data-binary '{"features":[100,57,15,72,44,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],"threshold":10,"valence":16,"arousal":24,"multiplier":2}' \
+%   --compressed
+
+% curl 'http://localhost:5000/generate_song' \
+%   -H 'Connection: keep-alive' \
+%   -H 'Accept: application/json' \
+%   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36' \
+%   -H 'Content-Type: application/json' \
+%   -H 'Origin: http://localhost:3000' \
+%   -H 'Sec-Fetch-Site: same-site' \
+%   -H 'Sec-Fetch-Mode: cors' \
+%   -H 'Sec-Fetch-Dest: empty' \
+%   -H 'Referer: http://localhost:3000/' \
+%   -H 'Accept-Language: en-US,en;q=0.9,ro;q=0.8,co;q=0.7' \
+%   --data-binary '{"features":[100,57,15,72,44,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50],"threshold":10,"valence":16,"arousal":24,"multiplier":2}' \
 %   --compressed

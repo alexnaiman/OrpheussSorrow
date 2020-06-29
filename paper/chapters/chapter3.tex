@@ -12,7 +12,7 @@ from free playing and improvisation to diving deep into the
 rhythm, notes, scales, modes, and other elements of music theory,
 for both of them existing various approaches in machine learning.
 This chapter explores several of these methods related to this paper's work,
-but before immersing in the machine learning aspects, we should discuss how they process data.
+but before immersing in the machine learning aspects, one should discuss how they process data.
 
 
 
@@ -27,21 +27,21 @@ The MIDI file format is a popular choice among data scientist
 when working with audio and music due to several aspects:
 
 \begin{itemize}
-    \item{
-          \emph{ease of manipulation}:
-          one can edit the parameters of a note without the need for rerecording; \cite{midiAmanda}
-          }
-    \item{
-          \emph{ability to change instruments}:
-          a MIDI file only defines what notes should be played and in which order,
-          not the instrument that should perform them; \cite{midiAmanda}
-          }
-    \item{
-          \emph{small size}: this file format is comparable to an electronic sheet;
-          it does not hold any audio information,
-          only instructions for playing the notes,
-          saving a whole song in just several kilobytes of data. \cite{midiAmanda}
-          }
+  \item{
+        \emph{ease of manipulation}:
+        one can edit the parameters of a note without the need for rerecording; \cite{midiAmanda}
+        }
+  \item{
+        \emph{ability to change instruments}:
+        a MIDI file only defines what notes should be played and in which order,
+        not the instrument that should perform them; \cite{midiAmanda}
+        }
+  \item{
+        \emph{small size}: this file format is comparable to an electronic sheet;
+        it does not hold any audio information,
+        only instructions for playing the notes,
+        saving a whole song in just several kilobytes of data. \cite{midiAmanda}
+        }
 \end{itemize}
 
 \section{LakhNES and Transformer-XL}
@@ -61,10 +61,10 @@ short-term memory, which give great results on more straightforward data,
 but cannot establish longer dependencies between words due to their limitations. \cite{transformerXLMedium}
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=1\textwidth]{Transformer_XL}
-    \caption{\emph{Transformer-XL - training and evaluation \cite{transformerXLMedium}}}
-    \label{fig:transformerXLMedium}
+  \centering
+  \includegraphics[width=1\textwidth]{Transformer_XL}
+  \caption{\emph{Transformer-XL - training and evaluation \cite{transformerXLMedium}}}
+  \label{fig:transformerXLMedium}
 \end{figure}
 
 Vanilla Transformers tend to resolve this problem by introducing new attention modules.
@@ -76,10 +76,10 @@ hence, the data can suffer from context fragmentation. \cite{transformerXLMedium
 
 
 \begin{wrapfigure}{L}{0.5\textwidth}
-    \centering
-    \includegraphics[width=0.45\textwidth]{lakhnessConversion}
-    \caption{\emph{Note conversion example used in \cite{donahue2019lakhnes}}}
-    \label{fig:noteConversion}
+  \centering
+  \includegraphics[width=0.45\textwidth]{lakhnessConversion}
+  \caption{\emph{Note conversion example used in \cite{donahue2019lakhnes}}}
+  \label{fig:noteConversion}
 \end{wrapfigure}
 
 Transformers-XL solves the problems mentioned above by

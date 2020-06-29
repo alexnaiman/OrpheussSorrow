@@ -14,10 +14,10 @@ so people started to sync it with the cloud.
 Hence, a new way of storing and transmitting data emerged: streaming.
 
 \begin{figure}[h]
-      \centering
-      \includegraphics[width=1\textwidth]{ifpi}
-      \caption{\emph{Global Recorded Music Industry Revenues 2001-2018  \cite{ifpi}}}
-      \label{fig:ifpi}
+  \centering
+  \includegraphics[width=1\textwidth]{ifpi}
+  \caption{\emph{Global Recorded Music Industry Revenues 2001-2018  \cite{ifpi}}}
+  \label{fig:ifpi}
 \end{figure}
 
 As shown in Figure\emph{~\ref{fig:ifpi}}, in the last decade,
@@ -58,17 +58,23 @@ It is a client-server web application where a musician can input
 emotion data and values to other parameters to visualize songs that this deep
 neural network generated on the given data.
 In the following sections,
-we will discuss the paper's approach related to music and emotion,
+it will be discussed the paper's approach related to music and emotion,
 dataset creation, and the internal structure of the model.
 
 
 \subsection{Music, emotions and machine learning}
-\begin{wrapfigure}{L}{0.5\textwidth}
-      \centering
-      \includegraphics[width=0.45\textwidth]{plutchik}
-      \caption{\emph{Plutchik's wheel/cone of emotions \cite{plutchik}}}
-      \label{fig:plutchik}
-\end{wrapfigure}
+% \begin{wrapfigure}{l}{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=0.35\textwidth]{plutchik}
+%       \caption{\emph{Plutchik's wheel/cone of emotions \cite{plutchik}}}
+%       \label{fig:plutchik}
+% \end{wrapfigure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{plutchik}
+  \caption{\emph{Plutchik's wheel/cone of emotions \cite{plutchik}}}
+  \label{fig:plutchik}
+\end{figure}
 Music and emotion are highly connected,
 one of the main goals of a composer being expressing his feelings through notes,
 trying to reach his audience, and to induce them his mood and ideas.
@@ -91,10 +97,10 @@ surprise - anticipation, fear - anger, trust - disgust, joy - sadness.
 
 
 \begin{wrapfigure}[10]{r}{0.5\textwidth}
-      \centering
-      \includegraphics[width=0.45\textwidth]{thayers}
-      \caption{\emph{Thayer's Model for Emotions (also named Russel's model) \cite{plutchik}}}
-      \label{fig:thayers}
+  \centering
+  \includegraphics[width=0.45\textwidth]{thayers}
+  \caption{\emph{Thayer's Model for Emotions (also named Russel's model) \cite{plutchik}}}
+  \label{fig:thayers}
 \end{wrapfigure}
 
 When choosing the second, one frequently uses Thayers's
@@ -111,36 +117,37 @@ four general quadrants of emotions: happy, angry, sad, and relaxed.
 
 \subsection{MIDIs and Emotion Dataset}
 
-\begin{wrapfigure}[13]{l}{0.5\textwidth}
-      \centering
-      \includegraphics[width=0.45\textwidth]{dataset_creation}
-      \caption{\emph{Merging existing datasets to create a new one}}
-      \label{fig:dataset_creation}
-\end{wrapfigure}
 
 When discussing machine learning and neural networks,
 one must know what data is available for their needs,
 how to parse their data in a format they fully understand and maximizes
 the potential of their data.
 
+
+\begin{wrapfigure}[11]{L}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.45\textwidth]{dataset_creation}
+  \caption{\emph{Merging existing datasets to create a new one}}
+  \label{fig:dataset_creation}
+\end{wrapfigure}
 The model proposed uses MIDIs to store and handle the music information
 data due to ease of manipulation, as mentioned before.
 During quick research, there were not any free/public datasets
 that satisfied the needs of the problem statement - a
-dataset containing MIDIs with the emotion value(arousal and valence)
+dataset containing MIDIs with the emotion value (arousal and valence)
 attached to each song. Hence there was a need to create a new dataset
 by merging some of the existing ones to fulfill the requirements.
 The merged datasets are the following:
 \begin{itemize}
-      \item{
-            \textbf{Million Song Dataset} - a free compilation of metadata for a million contemporary common music records;\cite{themillion}
-            }
-      \item{
-            \textbf{Lakh Midi Dataset} - set of over 150,000 unique MIDI files, over 40,000 being matched to entries in the dataset mentioned above;\cite{lakh}
-            }
-      \item{
-            \textbf{Deezer Mood Detection Dataset} - valence and arousal dataset for over 10,000 songs also matched to the first-mentioned dataset.\cite{deezer}
-            }
+  \item{
+        \textbf{Million Song Dataset} - a free compilation of metadata for a million contemporary common music records;\cite{themillion}
+        }
+  \item{
+        \textbf{Lakh Midi Dataset} - set of over 150,000 unique MIDI files, over 40,000 being matched to entries in the dataset mentioned above;\cite{lakh}
+        }
+  \item{
+        \textbf{Deezer Mood Detection Dataset} - valence and arousal dataset for over 10,000 songs also matched to the first-mentioned dataset.\cite{deezer}
+        }
 \end{itemize}
 
 
@@ -174,10 +181,10 @@ For the first one is chosen the same value since very few songs use the highest
 and lowest pitches and also for symmetry's sake.
 
 \begin{figure}[h]
-      \centering
-      \includegraphics[width=1\textwidth]{model_short}
-      \caption{\emph{Short description of paper's model}}
-      \label{fig:model_short}
+  \centering
+  \includegraphics[width=1\textwidth]{model_short}
+  \caption{\emph{Short description of paper's model}}
+  \label{fig:model_short}
 \end{figure}
 
 As seen in Figure \emph{\ref{fig:model_short}},
@@ -187,6 +194,7 @@ It works similarly with the \cite{hackerPoet},
 but the main highlight of this particular model is that to its encoding
 are concatenated the valence and arousal values for each song,
 this approach helping it to learn how to generate songs based on its input emotion data.
+
 
 The composing works by creating an auxiliary model,
 namely a Keras backend function,
@@ -200,29 +208,31 @@ Next, the main structure of the model will be presented,
 with its primary layers and other parameters configured, as depicted in Figure \emph{\ref{fig:model}}.
 
 
-\begin{figure}[H]
-      \centering
-      \includegraphics[height=0.8\paperheight, width=1\textwidth]{model}
-      \caption{\emph{Structure of the model}}
-      \label{fig:model}
-\end{figure}
-
 For increasing its stability and speed, the model uses the batch-normalization layers.
 Their purpose is to normalize the output of the prior activation layer
 by subtracting the batch mean and dividing by its standard deviation,
 reducing in this manner generalization errors, providing some regularization. \cite{batchNorm}
 
+\begin{wrapfigure}[8]{l}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.3\textwidth]{relu}
+  \caption{\emph{ReLU visual representation \cite{relu}}}
+  \label{fig:relu}
+\end{wrapfigure}
 
 Another vital layer that helps to group the rolls in time-based sets is the time-distributed layer.
 It is usually used as a middleware for 3D input; given a timestep,
 it applies the same layer it wraps to each temporal slice of the same size as the timestep.\cite{keras}
 
-\begin{wrapfigure}[8]{L}{0.5\textwidth}
-      \centering
-      \includegraphics[width=0.3\textwidth]{relu}
-      \caption{\emph{ReLU visual representation \cite{relu}}}
-      \label{fig:relu}
-\end{wrapfigure}
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[height=0.8\paperheight, width=1\textwidth]{model}
+  \caption{\emph{Structure of the model}}
+  \label{fig:model}
+\end{figure}
+
+\clearpage
 
 Another characteristic of our model is the activation function used -
 ReLU(Rectified Linear Unit). Figure \emph{\ref{fig:relu}} represents the function mentioned before,
@@ -238,10 +248,10 @@ the mentioned function being the default used in binary classification problems.
 
 
 \begin{figure}[h]
-      \centering
-      \includegraphics[width=.8\textwidth]{loss}
-      \caption{figure}{\emph{Visual representation of loss}}
-      \label{fig:loss}
+  \centering
+  \includegraphics[width=.8\textwidth]{loss}
+  \caption{figure}{\emph{Visual representation of loss}}
+  \label{fig:loss}
 \end{figure}
 
 Researching other approaches for music composition influenced this paper,
@@ -277,10 +287,10 @@ it was not trained with, the result obtained is 98\% accuracy.
 
 
 \begin{figure}[h]
-      \centering
-      \includegraphics[width=.8\linewidth]{accuracy}
-      \caption{\emph{Visual representation of accuracy}}
-      \label{fig:accuracy}
+  \centering
+  \includegraphics[width=.8\linewidth]{accuracy}
+  \caption{\emph{Visual representation of accuracy}}
+  \label{fig:accuracy}
 \end{figure}
 
 

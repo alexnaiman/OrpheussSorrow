@@ -57,7 +57,7 @@ some of them having a method that can be overridden
 for a better manipulating of the UI, as seen in Figure \emph{\ref{fig:lifecycle}}.
 
 \subsection{MobX-state-tree}
-Mobx-state-tree(MST) is a state management library whose purpose
+Mobx-state-tree (MST) is a state management library whose purpose
 is to combine the traceability of immutable data with the simplicity
 and ease of mutable data, also using the reactiveness
 and performance of observable data.
@@ -150,7 +150,7 @@ diagram and the relationships between them.
 
 \begin{listing}
   \begin{minted}{jsx}
-   // Main smart component of our application in which we inject our store
+   // Main smart component of our application in which the store is injected
    const MidiContainer = () => {
      const { rollStore } = useStore();
      // other variables
@@ -195,7 +195,7 @@ diagram and the relationships between them.
    };
   \end{minted}
   \caption{\emph{Example of a smart component}}
-  \label{listing:smart}
+  \label{lst:smart}
 \end{listing}
 
 
@@ -209,13 +209,13 @@ ease of sharing code between components, and readability.
 The interface was designed using the concept of smart and presentational
 components \cite{smart_dumb}. The first type refers to components that
 should only be concerned about how things look (presentational)
-and how to render the data they receive, as seen in Listing \emph{\ref{listing:dumb}};
+and how to render the data they receive, as seen in Listing \emph{\ref{lst:dumb}};
 they should not have any logic regarding the functionalities and
 only receive callbacks. The second type defines components
 that are concerned about how things work:
 they provide data and behavior that is passed down
 to presentational components and are linked to state management
-libraries, as seen in Listing \emph{\ref{listing:smart}}.
+libraries, as seen in Listing \emph{\ref{lst:smart}}.
 
 \begin{listing}
   \begin{minted}{jsx}
@@ -237,7 +237,7 @@ const Keys = ({ scrollLeft }) => {
 };
   \end{minted}
   \caption{\emph{Example of presentational component}}
-  \label{listing:dumb}
+  \label{lst:dumb}
 \end{listing}
 
 
@@ -270,16 +270,13 @@ It also creates separated models for the encoder and decoder parts
 for later use, when generating a new song or
 normalizing and creating our metadata.
 
-\begin{listing}[H]
+\begin{listing}[h]
   \centering
   \begin{minted}{js}
 {
    "features":[
-      45,
-      23,
-      35,
+      45, 
       // ...other features, in total 48
-      23,
       50
    ],
    "threshold":50,
@@ -289,7 +286,7 @@ normalizing and creating our metadata.
 }
   \end{minted}
   \caption{\emph{Example of \textbf{{get\_song}} request}}
-  \label{listing:dumb}
+  \label{lst:dumb}
 \end{listing}
 
 \section{User interface}

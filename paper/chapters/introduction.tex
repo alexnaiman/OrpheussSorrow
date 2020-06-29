@@ -3,13 +3,15 @@ It is the essence of order, and leads to all that is good and just and beautiful
 
 \section{Motivation}
 
-The art of composing music is not one that any beginner can master due to the fact that
-music theory has a very steep learning curve.
-You can still compose music, without knowing anything about theory,
-but it will be very hard to know how to really express your
-thoughts since the notes do not have any meaning to you other than their sound.
-When you start learning, you will find out about scales,
-modes, chords progression and how they clearly relate to some feelings.
+The art of composing music is not one that any beginner can master
+due to the fact that music theory has a very steep learning curve.
+
+One can still compose music without knowing anything about theory,
+but it will be tough to know how to really express their thoughts
+since the notes do not have any meaning to them other than their sound.
+When they start learning, they will find out about scales, modes,
+chords progression, and how they clearly relate to some feelings.
+
 
 \section{Solution Overview}
 
@@ -21,11 +23,45 @@ train it on a given dataset and see the results about its objective,
 without needing to worry about the internal structure of each component inside the network.
 
 % \vspace{0.5cm}
-I want to encourage and help all people that have difficulties composing music with the help of machine learning.
-I want to create an application that can compose,
-enhance or continue a piece of music based on some emotions that the user can provide.
-The music should have a structure and the app will generate
-a MIDI file containing a song with the given characteristics.
+This paper wants to encourage and help all people that
+have difficulties composing music with the help of machine learning.
+This paper aspires to create an application that can compose, enhance,
+or continue a piece of music based on some emotions that the user can provide.
+The music should have a structure, and the app will generate a
+song with the given characteristics.
 
 \section{Thesis Outline}
-WIP: TODO: add thesis structure when done
+In this section, it will be discussed a sketch of the main chapters.
+
+\textbf{The second chapter} centers around the theoretical aspects of machine learning
+and deep learning.
+It begins with an introduction to different machine learning styles,
+how an artificial neural network works and its structure,
+ending with a small insight into deep learning,
+and the primary type of network this paper's work is about, the autoencoder.
+
+In \textbf{chapter 3},
+the paper focuses on related work and on other articles or projects
+that have similar goals or approaches. There are treated three strategies,
+each for different reasons. The first one, LahkNess \cite{donahue2019lakhnes},
+is presented as state-of-the-art for multi-instrumental musical composition.
+The second one represents one of the inspirations for this approach, the Composer \cite{hackerPoet},
+which uses autoencoders. The last one, AIVA \cite{aiva}, has a similar goal,
+to compose songs with a well-defined structure,
+the difference being that it is based on genre.
+
+\textbf{Chapter 4} contains the proposed approach.
+It is a detailed view of the main structure of the model,
+dataset it was trained on, and the results, meaning loss, accuracy,
+and the way it composes.
+
+\textbf{The fifth chapter} discussed the technical
+implementation of the paper's application,
+a description of the main frameworks used,
+and the patterns applied.
+There are also presented the main use cases along with their sequence diagrams,
+and the user interface.
+
+\textbf{The last chapter} describes the conclusions of this paper.
+It presents a summary of the model's
+results and also suggestions for future developments.
