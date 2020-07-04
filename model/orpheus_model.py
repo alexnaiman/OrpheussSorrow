@@ -181,7 +181,7 @@ class OrpheusModel:
             plot_model(model, to_file='orpheus_model2.png',
                        show_shapes=True, dpi=192)
 
-    def load_model(self, path='../dumped_models_backup/model_{}.hd5'.format(MODEL)):
+    def load_model(self, path='../dumped_models/model_{}.hd5'.format(MODEL)):
         """
         Loads a pre-trained model
         :param path: location of the model
