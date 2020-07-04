@@ -77,6 +77,7 @@ const InputContainer = ({
         onChange={setThreshold}
         value={threshold}
         onDragEnd={onDragEnd}
+        ymin={1}
       />
       <TextWrapper>
         <Text primaryColor="#FEFF01">Volume</Text>

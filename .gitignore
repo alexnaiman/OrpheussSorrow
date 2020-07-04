@@ -1,7 +1,3 @@
-dumped_models/*
-dumped_models_backup/*
-metadata_backup/*
-metadata/*
 dumps/*
 .idea/*
 model/__pycache__/*

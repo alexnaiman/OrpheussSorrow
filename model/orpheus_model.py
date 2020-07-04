@@ -26,11 +26,11 @@ BATCH_MOMENTUM = 0.9
 BATCH_SIZE = 350
 NUMBER_FEATURES = 48
 JUST_PLAY = True
-TRAIN_DATA = '../../MyApproach/new_dumps/train_data.npy'
-TRAIN_DATA_LENGTH = '../../MyApproach/new_dumps/train_length.npy'
-TRAIN_EMOTION_DATA = '../../MyApproach/new_dumps/train_emotion_normalized_data.npy'
-TEST_DATA = '../../MyApproach/new_dumps/test_data.npy'
-TEST_EMOTION_DATA = '../../MyApproach/new_dumps/test_emotion_normalized_data.npy'
+TRAIN_DATA = '../dumps/train_data.npy'
+TRAIN_DATA_LENGTH = '../dumps/train_length.npy'
+TRAIN_EMOTION_DATA = '../dumps/train_emotion_normalized_data.npy'
+TEST_DATA = '../dumps/test_data.npy'
+TEST_EMOTION_DATA = '../dumps/test_emotion_normalized_data.npy'
 
 MODEL = "190"
 
